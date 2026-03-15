@@ -1,0 +1,5 @@
+{
+  "name": "Zero Trust University Exam Platform",
+  "description": "A secure, enterprise-grade university entrance examination platform with candidate, admin, and SOC roles.",
+  "requestFramePermissions": []
+}

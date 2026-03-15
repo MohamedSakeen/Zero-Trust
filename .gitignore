@@ -1,0 +1,57 @@
+node_modules/
+.next/
+tsconfig.tsbuildinfo
+coverage/
+.DS_Store
+Thumbs.db
+*.log
+.env
+.env.example
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Test
+coverage/
+
+# Misc
+*.swp
+*.swo
+
+# IDE
+.vscode/
+.kiro/
+
+# Database
+*.sqlite
+
+# Ignore local files
+*.local
+
+# Ignore Markdown files (if needed)
+*.md
+
+# Ignore lock files
+package-lock.json
+yarn.lock
+
+# Ignore compiled files
+*.out
+*.pyc
+
+# Ignore temporary files
+~$*
+
+# Ignore backup files
+*.bak
+
+# Ignore drizzle migration files
+/drizzle/meta/
+
+# Ignore other config
+postcss.config.mjs
+eslint.config.mjs
+
+# Ignore test output
+src/__tests__/
