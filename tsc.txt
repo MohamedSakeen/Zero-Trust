@@ -1,0 +1,9 @@
+src/lib/db/exam-db.ts(104,30): error TS7006: Parameter 'q' implicitly has an 'any' type.
+src/lib/db/exam-db.ts(109,33): error TS7006: Parameter 'a' implicitly has an 'any' type.
+src/lib/db/question-repository.ts(51,78): error TS2339: Property 'message' does not exist on type 'string'.
+src/lib/db/question-repository.ts(129,78): error TS2339: Property 'message' does not exist on type 'string'.
+src/lib/validation/__tests__/question-validation.test.ts(8,3): error TS2305: Module '"../question-validation"' has no exported member 'validateRequiredFields'.
+src/lib/validation/__tests__/question-validation.test.ts(9,3): error TS2724: '"../question-validation"' has no exported member named 'validateQuestionOptions'. Did you mean 'validateQuestion'?
+src/lib/validation/__tests__/question-validation.test.ts(11,3): error TS2724: '"../question-validation"' has no exported member named 'validateQuestionFilter'. Did you mean 'validateQuestion'?
+src/lib/validation/__tests__/question-validation.test.ts(217,21): error TS2551: Property 'valid' does not exist on type 'ValidationResult'. Did you mean 'isValid'?
+src/lib/validation/__tests__/question-validation.test.ts(235,21): error TS2551: Property 'valid' does not exist on type 'ValidationResult'. Did you mean 'isValid'?
