@@ -18,43 +18,145 @@ import {
   ShieldCheck,
 } from "lucide-react";
 import Link from "next/link";
+
 import { useRouter } from "next/navigation";
+
 
 const checks = [
   { id: "browser", label: "Browser Integrity Check" },
   { id: "network", label: "Network Security Analysis" },
-  { id: "camera", label: "Camera & Microphone Access" },
+  { id: "device", label: "Camera & Microphone Access" },
   { id: "vm", label: "Virtual Machine Detection" },
   { id: "screen", label: "Screen Sharing Status" },
 ];
 
+
 export default function VerificationPage() {
   const [currentCheck, setCurrentCheck] = useState(0);
-  const [status, setStatus] = useState<
-    "idle" | "running" | "success" | "failed"
-  >("idle");
+  const [status, setStatus] = useState<"idle" | "running" | "success" | "failed">("idle");
+  const [error, setError] = useState<string | null>(null);
   const router = useRouter();
 
-  const startVerification = () => {
-    setStatus("running");
-    setCurrentCheck(0);
+  // Helper functions to collect data for each check
+  const getBrowserPayload = () => ({
+    userAgent: navigator.userAgent,
+    devtoolsOpen: false, // Optionally implement detection
+    screenWidth: window.innerWidth,
+    screenHeight: window.innerHeight,
+  });
+  const getNetworkPayload = () => ({
+    isVPN: false, // Optionally implement detection
+    location: "unknown", // Optionally use geolocation
+    expectedLocation: "unknown",
+  });
+  const getDevicePayload = async () => {
+    let camera = "denied";
+    let microphone = "denied";
+    try {
+      const stream = await navigator.mediaDevices.getUserMedia({ video: true, audio: true });
+      if (stream.getVideoTracks().length > 0) camera = "granted";
+      if (stream.getAudioTracks().length > 0) microphone = "granted";
+      stream.getTracks().forEach((track) => track.stop());
+    } catch (e) {}
+    return { camera, microphone };
   };
+  const getVmPayload = () => ({
+    platform: navigator.platform,
+  });
+  const getScreenPayload = () => ({
+    focused: document.hasFocus(),
+    tabSwitches: 0, // Optionally implement tab switch tracking
+  });
 
-  useEffect(() => {
-    if (status === "running") {
-      if (currentCheck < checks.length) {
-        const timer = setTimeout(() => {
-          setCurrentCheck((prev) => prev + 1);
-        }, 800);
-        return () => clearTimeout(timer);
-      } else {
-        const timer = setTimeout(() => {
-          setStatus("success");
-        }, 0);
-        return () => clearTimeout(timer);
+  // Helper to get JWT from localStorage
+  const getToken = () =>
+    (typeof window !== 'undefined' && localStorage.getItem('accessToken')) || '';
+
+  const checkFunctions = [
+    async () => {
+      // Browser check
+      const res = await fetch("/api/security/browser-check", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${getToken()}`,
+        },
+        body: JSON.stringify(getBrowserPayload()),
+      });
+      return res.json();
+    },
+    async () => {
+      // Network check
+      const res = await fetch("/api/security/network-check", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${getToken()}`,
+        },
+        body: JSON.stringify(getNetworkPayload()),
+      });
+      return res.json();
+    },
+    async () => {
+      // Device check
+      const payload = await getDevicePayload();
+      const res = await fetch("/api/security/device-check", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${getToken()}`,
+        },
+        body: JSON.stringify(payload),
+      });
+      return res.json();
+    },
+    async () => {
+      // VM check
+      const res = await fetch("/api/security/vm-check", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${getToken()}`,
+        },
+        body: JSON.stringify(getVmPayload()),
+      });
+      return res.json();
+    },
+    async () => {
+      // Screen check
+      const res = await fetch("/api/security/screen-check", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${getToken()}`,
+        },
+        body: JSON.stringify(getScreenPayload()),
+      });
+      return res.json();
+    },
+  ];
+
+  const runChecks = async () => {
+    setStatus("running");
+    setError(null);
+    setCurrentCheck(0);
+    for (let i = 0; i < checkFunctions.length; i++) {
+      setCurrentCheck(i);
+      try {
+        const result = await checkFunctions[i]();
+        if (!result.success) {
+          setStatus("failed");
+          setError(result.reason || result.error || "Check failed");
+          return;
+        }
+      } catch (e: any) {
+        setStatus("failed");
+        setError(e.message || "Check failed");
+        return;
       }
     }
-  }, [currentCheck, status]);
+    setStatus("success");
+  };
 
   return (
     <div className="max-w-2xl mx-auto space-y-6">
@@ -129,7 +231,7 @@ export default function VerificationPage() {
             <Link href="/candidate">Cancel</Link>
           </Button>
           {status === "idle" && (
-            <Button onClick={startVerification}>Start Verification</Button>
+            <Button onClick={runChecks}>Start Verification</Button>
           )}
           {status === "running" && (
             <Button disabled>
@@ -144,6 +246,9 @@ export default function VerificationPage() {
             >
               <Link href="/candidate/exam">Proceed to Exam</Link>
             </Button>
+          )}
+          {status === "failed" && (
+            <div className="text-red-600 text-sm font-medium mt-2">{error}</div>
           )}
         </CardFooter>
       </Card>

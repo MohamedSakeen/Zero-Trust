@@ -6,4 +6,11 @@ export const mockCandidates = [
   { id: "CAND-8496", name: "Charlie Brown", email: "charlie.b@example.com", date: "Oct 13, 2026", status: "Rejected", department: "Engineering" },
   { id: "CAND-8497", name: "Diana Prince", email: "diana.p@example.com", date: "Oct 14, 2026", status: "Pending", department: "Mathematics" },
   { id: "CAND-8498", name: "Evan Wright", email: "evan.w@example.com", date: "Oct 14, 2026", status: "Verified", department: "Physics" },
+  { id: "CAND-8499", name: "Fatima Noor", email: "fatima.noor@example.com", date: "Oct 15, 2026", status: "Verified", department: "Biology" },
+  { id: "CAND-8500", name: "George King", email: "george.king@example.com", date: "Oct 15, 2026", status: "Pending", department: "Chemistry" },
+  { id: "CAND-8501", name: "Hannah Lee", email: "hannah.lee@example.com", date: "Oct 16, 2026", status: "Verified", department: "Mathematics" },
+  { id: "CAND-8502", name: "Ivan Petrov", email: "ivan.petrov@example.com", date: "Oct 16, 2026", status: "Rejected", department: "Engineering" },
+  { id: "CAND-8503", name: "Julia Kim", email: "julia.kim@example.com", date: "Oct 17, 2026", status: "Verified", department: "Physics" },
+  { id: "CAND-8504", name: "Khalid Hassan", email: "khalid.hassan@example.com", date: "Oct 17, 2026", status: "Pending", department: "Computer Science" },
+  { id: "CAND-8505", name: "Laura Chen", email: "laura.chen@example.com", date: "Oct 18, 2026", status: "Verified", department: "Biology" },
 ];

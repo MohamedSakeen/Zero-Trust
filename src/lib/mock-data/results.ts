@@ -4,4 +4,13 @@ export const mockResults = [
   { id: "CAND-8494", name: "Alice Johnson", exam: "Computer Science 2026", score: 75, status: "Under Review", date: "Oct 15, 2026" },
   { id: "CAND-8495", name: "Bob Williams", exam: "Computer Science 2026", score: 95, status: "Verified", date: "Oct 15, 2026" },
   { id: "CAND-8496", name: "Charlie Brown", exam: "Computer Science 2026", score: 0, status: "Invalidated", date: "Oct 15, 2026" },
+  { id: "CAND-8497", name: "Diana Prince", exam: "Mathematics 2026", score: 81, status: "Verified", date: "Oct 16, 2026" },
+  { id: "CAND-8498", name: "Evan Wright", exam: "Physics 2026", score: 78, status: "Verified", date: "Oct 16, 2026" },
+  { id: "CAND-8499", name: "Fatima Noor", exam: "Biology 2026", score: 89, status: "Verified", date: "Oct 17, 2026" },
+  { id: "CAND-8500", name: "George King", exam: "Chemistry 2026", score: 67, status: "Pending", date: "Oct 17, 2026" },
+  { id: "CAND-8501", name: "Hannah Lee", exam: "Mathematics 2026", score: 94, status: "Verified", date: "Oct 18, 2026" },
+  { id: "CAND-8502", name: "Ivan Petrov", exam: "Engineering 2026", score: 72, status: "Rejected", date: "Oct 18, 2026" },
+  { id: "CAND-8503", name: "Julia Kim", exam: "Physics 2026", score: 85, status: "Verified", date: "Oct 19, 2026" },
+  { id: "CAND-8504", name: "Khalid Hassan", exam: "Computer Science 2026", score: 90, status: "Verified", date: "Oct 19, 2026" },
+  { id: "CAND-8505", name: "Laura Chen", exam: "Biology 2026", score: 88, status: "Verified", date: "Oct 20, 2026" },
 ];
