@@ -40,7 +40,7 @@ export default function CandidateLayout({
   ];
 
   return (
-    <div className="min-h-screen flex flex-col bg-slate-50">
+    <div className="min-h-screen flex flex-col bg-white">
       <header className="sticky top-0 z-50 w-full border-b border-slate-200 bg-white">
         <div className="container mx-auto flex h-14 items-center justify-between px-4">
           <Link
@@ -51,7 +51,7 @@ export default function CandidateLayout({
             <span>Zero Trust Exam Platform</span>
           </Link>
           <div className="flex items-center gap-4">
-            <div className="flex items-center gap-2 text-sm font-medium text-slate-600">
+            <div className="flex items-center gap-2 text-sm font-medium text-slate-700">
               <User className="h-4 w-4" />
               <span>John Doe (CAND-8492)</span>
             </div>

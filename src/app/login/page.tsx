@@ -14,7 +14,7 @@ import {
 
 export default function LoginPage() {
   return (
-    <div className="min-h-screen flex flex-col bg-slate-950 relative overflow-hidden">
+    <div className="min-h-screen flex flex-col bg-white relative overflow-hidden">
       {/* Background effects */}
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[700px] h-[500px] bg-cyan-600/6 rounded-full blur-[140px]" />
@@ -26,7 +26,7 @@ export default function LoginPage() {
         <div className="container mx-auto flex h-16 items-center px-4">
           <Link
             href="/"
-            className="flex items-center gap-2.5 font-semibold text-slate-50"
+            className="flex items-center gap-2.5 font-semibold text-slate-900"
           >
             <div className="flex items-center justify-center h-8 w-8 rounded-lg bg-gradient-to-br from-cyan-400 to-blue-600 shadow-lg shadow-cyan-500/25">
               <ShieldCheck className="h-4.5 w-4.5 text-white" />

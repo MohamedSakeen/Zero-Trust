@@ -24,10 +24,10 @@ export default function CandidateDashboard() {
       </div>
 
       <div className="grid gap-6 md:grid-cols-3">
-        <Card className="md:col-span-2">
-          <CardHeader>
+        <Card className="md:col-span-2 bg-slate-900 text-white">
+          <CardHeader className="text-white">
             <div className="flex items-center justify-between">
-              <CardTitle>Upcoming Examination</CardTitle>
+              <CardTitle className="text-white">Upcoming Examination</CardTitle>
               <Badge
                 variant="outline"
                 className="bg-blue-50 text-blue-700 border-blue-200"
@@ -35,11 +35,11 @@ export default function CandidateDashboard() {
                 Scheduled
               </Badge>
             </div>
-            <CardDescription>
+            <CardDescription className="text-white">
               Computer Science Entrance Exam 2026
             </CardDescription>
           </CardHeader>
-          <CardContent className="space-y-4">
+          <CardContent className="space-y-4 text-white">
             <div className="grid grid-cols-2 gap-4 text-sm">
               <div className="flex items-center gap-2 text-slate-600">
                 <Calendar className="h-4 w-4" />
@@ -66,19 +66,19 @@ export default function CandidateDashboard() {
               </ul>
             </div>
           </CardContent>
-          <CardFooter>
+          <CardFooter className="text-white">
             <Button className="w-full" asChild>
               <Link href="/candidate/verification">Start System Check</Link>
             </Button>
           </CardFooter>
         </Card>
 
-        <Card>
-          <CardHeader>
-            <CardTitle>Trust Score</CardTitle>
-            <CardDescription>Current session security posture</CardDescription>
+        <Card className="bg-slate-900 text-white">
+          <CardHeader className="text-white">
+            <CardTitle className="text-white">Trust Score</CardTitle>
+            <CardDescription className="text-white">Current session security posture</CardDescription>
           </CardHeader>
-          <CardContent className="flex flex-col items-center justify-center py-6">
+          <CardContent className="flex flex-col items-center justify-center py-6 text-white">
             <div className="relative flex h-32 w-32 items-center justify-center rounded-full border-8 border-amber-100">
               <div className="absolute inset-0 rounded-full border-8 border-amber-500 border-t-transparent border-r-transparent transform -rotate-45"></div>
               <div className="text-center">

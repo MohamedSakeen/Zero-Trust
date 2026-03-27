@@ -150,6 +150,7 @@ export default function QuestionManagementPage() {
             className="hidden" 
             ref={fileInputRef}
             onChange={handleFileUpload}
+            title="File"
           />
           <Button 
             variant="outline" 

@@ -107,14 +107,14 @@ export default function ExamPage() {
   if (showConfirmSubmit) {
     return (
       <div className="flex flex-col items-center justify-center h-[calc(100vh-8rem)]">
-        <Card className="w-full max-w-md text-center">
-          <CardHeader>
+        <Card className="w-full max-w-md text-center bg-slate-900 text-white">
+          <CardHeader className="text-white">
             <div className="mx-auto bg-blue-100 p-3 rounded-full w-16 h-16 flex items-center justify-center mb-4">
               <CheckCircle2 className="h-8 w-8 text-blue-600" />
             </div>
-            <CardTitle className="text-2xl">Submit Exam?</CardTitle>
+            <CardTitle className="text-2xl text-white">Submit Exam?</CardTitle>
           </CardHeader>
-          <CardContent>
+          <CardContent className="text-white">
             <p className="text-slate-500 mb-6">
               Are you sure you want to submit? You have answered {answeredCount} out of {questions.length} questions.
             </p>
@@ -184,14 +184,14 @@ export default function ExamPage() {
 
       <div className="flex flex-1 gap-6 overflow-hidden">
         {/* Left Sidebar - Question Nav */}
-        <Card className="w-64 flex-shrink-0 flex flex-col hidden md:flex">
-          <CardHeader className="py-4 border-b border-slate-100">
-            <CardTitle className="text-sm flex justify-between items-center">
+        <Card className="w-64 flex-shrink-0 flex flex-col hidden md:flex bg-slate-900 text-white">
+          <CardHeader className="py-4 border-b border-slate-100 text-white">
+            <CardTitle className="text-sm flex justify-between items-center text-white">
               <span>Question Navigator</span>
               <span className="text-xs font-normal text-slate-500">{answeredCount}/{questions.length}</span>
             </CardTitle>
           </CardHeader>
-          <CardContent className="p-4 overflow-y-auto flex-1">
+          <CardContent className="p-4 overflow-y-auto flex-1 text-white">
             <div className="grid grid-cols-4 gap-2">
               {questions.map((_, idx) => {
                 const isAnswered = answers[idx] !== undefined;
@@ -236,8 +236,8 @@ export default function ExamPage() {
         </Card>
 
         {/* Center - Question Area */}
-        <Card className="flex-1 flex flex-col">
-          <CardHeader className="border-b border-slate-100 pb-4">
+        <Card className="flex-1 flex flex-col bg-slate-900 text-white">
+          <CardHeader className="border-b border-slate-100 pb-4 text-white">
             <div className="flex justify-between items-center">
               <span className="text-sm font-medium text-slate-500 uppercase tracking-wider">
                 Question {currentQuestion + 1} of {questions.length}
@@ -252,11 +252,11 @@ export default function ExamPage() {
                 {reviewMarked[currentQuestion] ? "Marked for Review" : "Mark for Review"}
               </Button>
             </div>
-            <CardTitle className="text-xl leading-relaxed mt-2">
+            <CardTitle className="text-xl leading-relaxed mt-2 text-white">
               {questions[currentQuestion].text}
             </CardTitle>
           </CardHeader>
-          <CardContent className="flex-1 p-6 overflow-y-auto">
+          <CardContent className="flex-1 p-6 overflow-y-auto text-white">
             <div className="space-y-3">
               {questions[currentQuestion].options.map((option, idx) => {
                 const isSelected = answers[currentQuestion] === idx;
@@ -289,7 +289,7 @@ export default function ExamPage() {
               })}
             </div>
           </CardContent>
-          <CardFooter className="border-t border-slate-100 pt-4 flex justify-between">
+          <CardFooter className="border-t border-slate-100 pt-4 flex justify-between text-white">
             <Button
               variant="outline"
               onClick={() =>

@@ -8,7 +8,7 @@ import { motion } from "motion/react";
 
 export default function Home() {
   return (
-    <div className="flex flex-col min-h-screen relative overflow-hidden bg-slate-950">
+    <div className="flex flex-col min-h-screen relative overflow-hidden bg-white">
       {/* Background Effects - Enhanced */}
       <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
         {/* Main ambient glow */}
@@ -46,13 +46,13 @@ export default function Home() {
                     </span>
                   </div>
                   <h1 className="text-5xl font-extrabold tracking-tight sm:text-6xl md:text-7xl lg:text-8xl">
-                    <span className="text-slate-50 drop-shadow-[0_0_25px_rgba(255,255,255,0.1)]">Zero Trust</span>
+                    <span className="text-slate-900 drop-shadow-[0_0_25px_rgba(0,0,0,0.04)]">Zero Trust</span>
                     <br />
                     <span className="bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 via-blue-400 to-indigo-400 animate-gradient-shift drop-shadow-[0_0_30px_rgba(6,182,212,0.3)]">
                       Examination Engine
                     </span>
                   </h1>
-                  <p className="mx-auto max-w-[680px] text-slate-400 md:text-lg lg:text-xl pt-2 font-light leading-relaxed">
+                  <p className="mx-auto max-w-[680px] text-slate-600 md:text-lg lg:text-xl pt-2 font-light leading-relaxed">
                     Continuous identity verification and behavioral biometrics
                     ensuring mathematical certainty in academic integrity.
                   </p>
@@ -82,7 +82,7 @@ export default function Home() {
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
                   transition={{ duration: 0.6, delay: 0.6 }}
-                  className="flex flex-wrap items-center justify-center gap-6 pt-8 text-sm text-slate-500"
+                  className="flex flex-wrap items-center justify-center gap-6 pt-8 text-sm text-slate-700"
                 >
                   {[
                     { icon: Shield, text: "256-bit Encryption" },
@@ -90,7 +90,7 @@ export default function Home() {
                     { icon: Zap, text: "Real-time Analysis" },
                   ].map((item, i) => (
                     <div key={i} className="flex items-center gap-2">
-                      <item.icon className="h-4 w-4 text-slate-600" />
+                      <item.icon className="h-4 w-4 text-slate-800" />
                       <span>{item.text}</span>
                     </div>
                   ))}
@@ -110,10 +110,10 @@ export default function Home() {
                 transition={{ duration: 0.5 }}
                 className="text-center mb-14"
               >
-                <h2 className="text-3xl font-bold text-slate-100 sm:text-4xl mb-3">
+                <h2 className="text-3xl font-bold text-slate-800 sm:text-4xl mb-3">
                   Security Architecture
                 </h2>
-                <p className="text-slate-400 max-w-lg mx-auto">
+                <p className="text-slate-600 max-w-lg mx-auto">
                   Multi-layered defense protocols that adapt in real-time to ensure zero-compromise examination integrity.
                 </p>
               </motion.div>
@@ -163,10 +163,10 @@ export default function Home() {
                         <feature.icon className={`h-6 w-6 ${feature.color}`} />
                       </div>
                       <div className="space-y-2.5">
-                        <h3 className="text-xl font-bold text-slate-100">
+                        <h3 className="text-xl font-bold text-slate-800">
                           {feature.title}
                         </h3>
-                        <p className="text-sm text-slate-400 leading-relaxed">
+                        <p className="text-sm text-slate-600 leading-relaxed">
                           {feature.desc}
                         </p>
                       </div>
@@ -182,10 +182,10 @@ export default function Home() {
         
         <footer className="w-full border-t border-slate-800/40 py-8 glass">
           <div className="container mx-auto px-4 flex flex-col md:flex-row items-center justify-between gap-4">
-            <p className="text-sm text-slate-500 font-medium">
+            <p className="text-sm text-slate-700 font-medium">
               &copy; 2026 Zero Trust Security Systems.
             </p>
-            <div className="flex gap-8 text-sm text-slate-400">
+            <div className="flex gap-8 text-sm text-slate-600">
               <Link href="/admin-login" className="hover:text-cyan-400 transition-colors duration-300">
                 Admin Terminal
               </Link>

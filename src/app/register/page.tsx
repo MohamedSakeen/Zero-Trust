@@ -14,7 +14,7 @@ import {
 
 export default function RegisterPage() {
   return (
-    <div className="min-h-screen flex flex-col bg-slate-950 relative overflow-hidden">
+    <div className="min-h-screen flex flex-col bg-white relative overflow-hidden">
       {/* Background effects */}
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute top-1/3 left-1/3 w-[600px] h-[500px] bg-indigo-600/6 rounded-full blur-[140px]" />
@@ -26,7 +26,7 @@ export default function RegisterPage() {
         <div className="container mx-auto flex h-16 items-center px-4">
           <Link
             href="/"
-            className="flex items-center gap-2.5 font-semibold text-slate-50"
+            className="flex items-center gap-2.5 font-semibold text-slate-900"
           >
             <div className="flex items-center justify-center h-8 w-8 rounded-lg bg-gradient-to-br from-cyan-400 to-blue-600 shadow-lg shadow-cyan-500/25">
               <ShieldCheck className="h-4.5 w-4.5 text-white" />
@@ -42,10 +42,10 @@ export default function RegisterPage() {
             <div className="mx-auto mb-2 flex items-center justify-center h-12 w-12 rounded-xl bg-indigo-500/10 ring-1 ring-indigo-500/20">
               <UserPlus className="h-6 w-6 text-indigo-400" />
             </div>
-            <CardTitle className="text-2xl font-bold tracking-tight text-slate-50">
+            <CardTitle className="text-2xl font-bold tracking-tight text-slate-900">
               Candidate Registration
             </CardTitle>
-            <CardDescription className="text-slate-400">
+            <CardDescription className="text-slate-600">
               Register for the upcoming university entrance examination
             </CardDescription>
           </CardHeader>
@@ -81,7 +81,7 @@ export default function RegisterPage() {
               <Label htmlFor="confirmPassword">Confirm Password</Label>
               <Input id="confirmPassword" type="password" required />
             </div>
-            <div className="rounded-xl bg-cyan-500/5 border border-cyan-500/15 p-4 text-sm text-slate-400 mt-4">
+            <div className="rounded-xl bg-cyan-500/5 border border-cyan-500/15 p-4 text-sm text-slate-600 mt-4">
               <p className="font-medium text-cyan-300 mb-1.5 flex items-center gap-2">
                 <ShieldCheck className="h-4 w-4" />
                 Identity Verification Required
@@ -97,7 +97,7 @@ export default function RegisterPage() {
             <Button className="w-full h-11 text-base rounded-xl" asChild>
               <Link href="/login">Submit Registration</Link>
             </Button>
-            <div className="text-center text-sm text-slate-500">
+            <div className="text-center text-sm text-slate-700">
               Already registered?{" "}
               <Link
                 href="/login"
