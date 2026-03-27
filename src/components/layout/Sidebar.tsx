@@ -19,13 +19,13 @@ export function Sidebar({ className, items }: SidebarProps) {
   return (
     <div
       className={cn(
-        "pb-12 w-64 border-r border-slate-200 bg-white hidden md:block shrink-0 h-[calc(100vh-3.5rem)] sticky top-14",
+        "pb-12 w-64 border-r border-gray-200 bg-white hidden md:block shrink-0 h-[calc(100vh-3.5rem)] sticky top-14",
         className,
       )}
     >
       <div className="space-y-4 py-4">
         <div className="px-3 py-2">
-          <h2 className="mb-2 px-4 text-xs font-semibold tracking-tight text-slate-500 uppercase">
+          <h2 className="mb-2 px-4 text-xs font-semibold tracking-tight text-gray-500 uppercase">
             Navigation
           </h2>
           <div className="space-y-1">
@@ -37,7 +37,7 @@ export function Sidebar({ className, items }: SidebarProps) {
                   "w-full justify-start",
                   pathname === item.href
                     ? "font-medium"
-                    : "font-normal text-slate-600",
+                    : "font-normal text-gray-600",
                 )}
                 asChild
               >

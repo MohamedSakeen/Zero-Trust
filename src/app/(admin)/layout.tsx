@@ -43,18 +43,18 @@ export default function AdminLayout({
 
   return (
     <div className="min-h-screen flex flex-col bg-white">
-      <header className="sticky top-0 z-50 w-full border-b border-slate-200 bg-white text-slate-900">
+      <header className="sticky top-0 z-50 w-full border-b border-gray-200 bg-white text-gray-900">
         <div className="container mx-auto flex h-14 items-center justify-between px-4">
-          <Link href="/admin" className="flex items-center gap-2 font-semibold">
+          <Link href="/admin" className="flex items-center gap-2 font-semibold text-gray-900">
             <ShieldCheck className="h-5 w-5 text-blue-400" />
             <span>ZTEP Admin Portal</span>
           </Link>
           <div className="flex items-center gap-4">
-            <div className="text-sm font-medium text-slate-700">Admin User</div>
+            <div className="text-sm font-medium text-gray-700">Admin User</div>
             <Button
               variant="ghost"
               size="sm"
-              className="text-slate-700 hover:text-slate-900 hover:bg-slate-100"
+              className="text-gray-700 hover:text-gray-900 hover:bg-gray-100"
               asChild
             >
               <Link href="/admin-login">
@@ -68,7 +68,7 @@ export default function AdminLayout({
       <div className="flex flex-1 container mx-auto">
         <Sidebar
           items={sidebarItems}
-          className="bg-white border-r border-slate-200"
+          className="bg-white border-r border-gray-200"
         />
         <main className="flex-1 p-6 md:p-8 overflow-auto">{children}</main>
       </div>

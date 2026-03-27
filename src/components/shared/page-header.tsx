@@ -10,11 +10,11 @@ export function PageHeader({ title, description, children }: PageHeaderProps) {
   return (
     <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
       <div>
-        <h1 className="text-2xl font-bold tracking-tight text-slate-900 dark:text-white">
+        <h1 className="text-2xl font-bold tracking-tight text-gray-900">
           {title}
         </h1>
         {description && (
-          <p className="text-slate-500 dark:text-slate-400">{description}</p>
+          <p className="text-gray-500">{description}</p>
         )}
       </div>
       {children && <div className="flex items-center gap-2">{children}</div>}
